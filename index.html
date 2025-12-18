@@ -45,11 +45,9 @@
             justify-content: space-between;
             align-items: center;
         }
-        .logo {
-            font-weight: bold;
-            font-size: 24px;
-            color: var(--primary-color);
-            /* ロゴ画像がある場合はimgタグに置き換えてください */
+        .logo img {
+            height: 40px;
+            width: auto;
         }
         .nav-btn {
             background: var(--primary-color);
@@ -157,7 +155,9 @@
     <!-- ヘッダー -->
     <header>
         <div class="container header-inner">
-            <div class="logo">PROTOTYPE LAB</div>
+            <div class="logo">
+                <img src="img/logo.png" alt="PROTOTYPE LAB">
+            </div>
             <a href="#contact" class="nav-btn">お問い合わせ</a>
         </div>
     </header>
