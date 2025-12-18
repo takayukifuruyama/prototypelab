@@ -31,6 +31,72 @@
             padding: 80px 0;
         }
 
+        /* サイドバーレイアウト */
+        .main-layout {
+            display: flex;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .main-content {
+            flex: 1;
+            min-width: 0;
+        }
+        .sidebar {
+            width: 280px;
+            flex-shrink: 0;
+        }
+        .sidebar-section {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .sidebar-section h3 {
+            font-size: 1.1em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        .sidebar-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar-section li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .sidebar-section li:last-child {
+            border-bottom: none;
+        }
+        .sidebar-cta {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        .sidebar-cta:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .main-layout {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+            }
+        }
+
         /* ヘッダー */
         header {
             background: #fff;
@@ -49,7 +115,6 @@
             font-weight: bold;
             font-size: 24px;
             color: var(--primary-color);
-            /* ロゴ画像がある場合はimgタグに置き換えてください */
         }
         .nav-btn {
             background: var(--primary-color);
@@ -112,6 +177,87 @@
             margin-bottom: 15px;
         }
 
+        /* コアバリュー */
+        .core-values {
+            background: #fff;
+        }
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .value-item {
+            padding: 25px;
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+        }
+        .value-item h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+
+        /* ユースケース */
+        .use-cases {
+            background: var(--bg-light);
+        }
+        .use-case-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: #fff;
+        }
+        .use-case-table th,
+        .use-case-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .use-case-table th {
+            background: var(--primary-color);
+            color: #fff;
+            font-weight: bold;
+        }
+        .use-case-table tr:hover {
+            background: #f5f5f5;
+        }
+
+        /* 強み */
+        .strengths {
+            background: #fff;
+        }
+        .strength-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .strength-item {
+            padding: 30px;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+        }
+        .strength-item h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        .strength-item .number {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
         /* 料金プラン */
         .pricing {
             background: var(--bg-light);
@@ -171,26 +317,137 @@
         </div>
     </section>
 
-    <!-- 課題と解決策 -->
-    <section class="features">
-        <div class="container">
-            <h2>Why PROTOTYPE LAB?</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <h3>課題：「見えない」から売れない</h3>
-                    <p>数千万円の開発も、紙の資料だけでは完成イメージが伝わりません。稟議の壁や検証コストの壁により、多くのアイデアが機会損失しています。</p>
+    <!-- メインコンテンツ with サイドバー -->
+    <div class="main-layout" style="padding: 80px 20px;">
+        <!-- メインコンテンツ -->
+        <div class="main-content">
+            <!-- 課題と解決策 -->
+            <section class="features" style="padding: 0 0 60px 0;">
+                <h2>Why PROTOTYPE LAB?</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h3>課題:「見えない」から売れない</h3>
+                        <p>数千万円の開発も、紙の資料だけでは完成イメージが伝わりません。稟議の壁や検証コストの壁により、多くのアイデアが機会損失しています。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>解決:AI × 熟練エンジニア</h3>
+                        <p>生成AIのスピードとエンジニアの最適化技術(Human-in-the-loop)を融合。最短48時間(2営業日)で、ブラウザで動作する高品質なプロトタイプを納品します。</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>成果:商談成約率の向上</h3>
+                        <p>「動くデモ」を提示することで、顧客の納得感と安心感を醸成。営業現場で磨き上げた「受注するための品質」を提供します。</p>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <h3>解決：AI × 熟練エンジニア</h3>
-                    <p>生成AIのスピードとエンジニアの最適化技術（Human-in-the-loop）を融合。最短48時間（2営業日）で、ブラウザで動作する高品質なプロトタイプを納品します。</p>
+            </section>
+
+            <!-- コアバリュー -->
+            <section class="core-values" style="padding: 60px 0;">
+                <h2 style="text-align: center; margin-bottom: 20px;">PROTOTYPE LABの3つの価値</h2>
+                <div class="value-grid">
+                    <div class="value-item">
+                        <h3>1. 圧倒的なスピード</h3>
+                        <p>ヒアリングから最短2日で納品。商談の熱量が冷めないうちに具体的なデモを提示し、顧客の関心を維持・向上させます。</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>2. 高い成約率</h3>
+                        <p>プリセールスの段階で「動くもの」を見せることにより、顧客の納得感と安心感を醸成。受注率を大幅に向上させます。</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>3. 柔軟な契約形態</h3>
+                        <p>月額制のため、案件がない月は解約や一時停止が可能。固定費を柔軟に管理できます。</p>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <h3>成果：商談成約率の向上</h3>
-                    <p>「動くデモ」を提示することで、顧客の納得感と安心感を醸成。営業現場で磨き上げた「受注するための品質」を提供します。</p>
+            </section>
+
+            <!-- ユースケース -->
+            <section class="use-cases" style="padding: 60px 30px; margin: 0 -30px;">
+                <h2 style="text-align: center; margin-bottom: 20px;">活用シーン</h2>
+                <table class="use-case-table">
+                    <thead>
+                        <tr>
+                            <th>ユースケース</th>
+                            <th>対象</th>
+                            <th>活用メリット</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>営業プレゼン支援</strong></td>
+                            <td>受託開発会社、SIer</td>
+                            <td>300万円規模以上の案件コンペで、他社が提案書のみの中、動くデモを提示して差別化</td>
+                        </tr>
+                        <tr>
+                            <td><strong>新規事業検証</strong></td>
+                            <td>スタートアップ、事業会社</td>
+                            <td>投資家ピッチや社内稟議でアイデアを可視化し、市場性を低コストで早期判断</td>
+                        </tr>
+                        <tr>
+                            <td><strong>緊急LP・フォーム制作</strong></td>
+                            <td>マーケティング担当</td>
+                            <td>イベント告知やキャンペーン用LPを、煩雑な要件定義なしで即座に公開</td>
+                        </tr>
+                        <tr>
+                            <td><strong>開発営業の武器化</strong></td>
+                            <td>営業部門</td>
+                            <td>新規開拓時に過去事例のデモや簡易デモで技術力を実証</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- イトナブの強み -->
+            <section class="strengths" style="padding: 60px 0;">
+                <h2 style="text-align: center; margin-bottom: 20px;">株式会社イトナブの強み</h2>
+                <div class="strength-grid">
+                    <div class="strength-item">
+                        <h3><span class="number">1</span>営業現場で磨かれた実践的ノウハウ</h3>
+                        <p>イトナブ社は、自社の受託開発営業においてプロトタイプを積極的に活用し、顧客の合意形成を加速させてきた実績を持ちます。</p>
+                        <p style="margin-top: 10px;"><strong>「どの程度の品質があれば顧客は意思決定できるか」「どこを作り込めば信頼を得られるか」</strong>という営業視点の勘所を熟知しています。</p>
+                    </div>
+                    <div class="strength-item">
+                        <h3><span class="number">2</span>豊富な受託開発実績に裏打ちされた技術力</h3>
+                        <p>Webアプリケーションからスマートフォンアプリまで、多岐にわたるシステム開発実績を持つエンジニアが在籍。</p>
+                        <p style="margin-top: 10px;">AIが生成したコードの表層的な修正に留まらず、<strong>セキュリティ、拡張性、バックエンドロジック</strong>など、本番開発への移行時に重要となる技術的要件を考慮した実装が可能です。</p>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
-    </section>
+
+        <!-- サイドバー -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>対象企業</h3>
+                <ul>
+                    <li>📊 受託開発会社</li>
+                    <li>🏢 SIer</li>
+                    <li>🚀 スタートアップ</li>
+                    <li>💼 事業会社（新規事業担当）</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>納品スピード</h3>
+                <p style="font-size: 2em; font-weight: bold; text-align: center; color: var(--primary-color); margin: 10px 0;">最短48時間</p>
+                <p style="text-align: center; font-size: 0.9em; color: #666;">ヒアリングから2営業日</p>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>提供キャパシティ</h3>
+                <p style="text-align: center; font-size: 1.1em; margin: 15px 0;">
+                    <strong style="color: var(--primary-color); font-size: 1.5em;">30社限定</strong>
+                </p>
+                <p style="font-size: 0.85em; color: #666;">高品質なサービスを維持するため、当面は限定提供となります。</p>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>開発体制</h3>
+                <p><strong>GLADIAL</strong></p>
+                <p style="font-size: 0.9em; margin-top: 10px;">地方拠点の優秀なエンジニアチームが開発を担当。コスト競争力を維持します。</p>
+            </div>
+
+            <a href="#contact" class="sidebar-cta">まずは無料相談</a>
+        </aside>
+    </div>
 
     <!-- 料金プラン -->
     <section class="pricing">
@@ -205,6 +462,8 @@
                         <ul>
                             <li>月1本まで制作</li>
                             <li>コスト重視の検証に最適</li>
+                            <li>オンラインMTG（数回/月）</li>
+                            <li>調整対応：1本につき3回まで</li>
                             <li>チャットサポート</li>
                         </ul>
                     </div>
@@ -217,6 +476,7 @@
                         <ul>
                             <li>月2本まで制作</li>
                             <li>複数案件の同時並行に</li>
+                            <li>複数案件の同時進行</li>
                             <li>Zoom定例MTG</li>
                         </ul>
                     </div>
@@ -227,14 +487,15 @@
                     <div class="price">¥500,000~<span>/月</span></div>
                     <div class="plan-desc">
                         <ul>
-                            <li>専任PMアサイン</li>
-                            <li>大規模・高度な技術検証</li>
-                            <li>本番移行サポート</li>
+                            <li>担当PMの専任アサイン</li>
+                            <li>大規模プロトタイプ対応<br>（10ページ以上、大量のモックデータ入力等）</li>
+                            <li>高度な技術検証<br>（外部API連携・認証基盤等）</li>
+                            <li>本番移行への詳細設計サポート</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <p class="note" style="text-align: center; margin-top: 20px;">※最低契約期間：3ヶ月〜（解約は前月通知）</p>
+            <p class="note" style="text-align: center; margin-top: 20px;">※最低契約期間：3ヶ月〜（解約は前月通知）<br>※未使用分のチケットは翌月末まで有効（保有上限：月間付与数の2倍）</p>
         </div>
     </section>
 
@@ -243,11 +504,14 @@
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 40px;">よくあるご質問</h2>
             <dl>
-                <dt style="font-weight: bold;">Q. 著作権の扱いは？</dt>
+                <dt style="font-weight: bold; margin-top: 20px;">Q. 著作権の扱いは？</dt>
                 <dd style="margin-bottom: 20px;">A. 納品したプロトタイプのコードおよび成果物の権利は、原則としてクライアントに譲渡します。</dd>
 
-                <dt style="font-weight: bold;">Q. 複雑なバックエンド処理も可能か？</dt>
-                <dd style="margin-bottom: 20px;">A. 基本はモック（ダミーデータ）対応ですが、技術力により必要なAPI連携などの実装も柔軟に対応可能です。</dd>
+                <dt style="font-weight: bold; margin-top: 20px;">Q. 複雑なバックエンド処理も可能か?</dt>
+                <dd style="margin-bottom: 20px;">A. 基本は「モック（見せかけのデータ）」で対応しますが、検証に必要なAPI連携や基本的なロジック実装は柔軟に対応可能です。</dd>
+
+                <dt style="font-weight: bold; margin-top: 20px;">Q. デザインの指定はできますか?</dt>
+                <dd style="margin-bottom: 20px;">A. AI生成の特性上、詳細なデザイン指定は不可ですが、色合いや雰囲気（トーン＆マナー）の調整は可能です。また、Figma等のデザインデータからの実装にも対応します。</dd>
             </dl>
         </div>
     </section>
