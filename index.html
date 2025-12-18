@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOTYPE LAB | 月額制プロトタイピングサービス</title>
+    <style>
+        /* 基本設定 */
+        :root {
+            --primary-color: #000; /* ロゴに合わせた黒 */
+            --accent-color: #0056b3; /* リンクやボタン用 */
+            --bg-light: #f9f9f9;
+            --text-color: #333;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        a { text-decoration: none; }
+
+        /* レイアウト */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        section {
+            padding: 80px 0;
+        }
+
+        /* ヘッダー */
+        header {
+            background: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: var(--primary-color);
+            /* ロゴ画像がある場合はimgタグに置き換えてください */
+        }
+        .nav-btn {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* メインビジュアル */
+        .hero {
+            background: var(--bg-light);
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: #666;
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: opacity 0.3s;
+        }
+        .cta-button:hover {
+            opacity: 0.8;
+        }
+
+        /* 特徴セクション */
+        .features {
+            text-align: center;
+        }
+        .features h2 {
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        .feature-item {
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+        .feature-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* 料金プラン */
+        .pricing {
+            background: var(--bg-light);
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .plan-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .plan-name { font-weight: bold; font-size: 1.2em; display: block; margin-bottom: 10px;}
+        .price { font-size: 2em; font-weight: bold; color: var(--primary-color); }
+        .price span { font-size: 0.5em; font-weight: normal; }
+        .plan-desc { margin: 20px 0; font-size: 0.9em; text-align: left; }
+        .note { font-size: 0.8em; color: #888; margin-top: 10px; }
+
+        /* お問い合わせ */
+        .contact {
+            text-align: center;
+            background: #333;
+            color: #fff;
+        }
+        .contact h2 { margin-bottom: 30px; }
+        .contact-info {
+            font-size: 1.2em;
+            line-height: 2;
+        }
+        .footer-note {
+            margin-top: 50px;
+            font-size: 0.8em;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">PROTOTYPE LAB</div>
+            <a href="#contact" class="nav-btn">お問い合わせ</a>
+        </div>
+    </header>
+
+    <!-- メインビジュアル -->
+    <section class="hero">
+        <div class="container">
+            <h1>最短48時間。<br>そのアイデアを「動くカタチ」に。</h1>
+            <p>月額制プロトタイピングサービス<br>Concept to Code</p>
+            <a href="#contact" class="cta-button">無料で相談する</a>
+        </div>
+    </section>
+
+    <!-- 課題と解決策 -->
+    <section class="features">
+        <div class="container">
+            <h2>Why PROTOTYPE LAB?</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>課題：「見えない」から売れない</h3>
+                    <p>数千万円の開発も、紙の資料だけでは完成イメージが伝わりません。稟議の壁や検証コストの壁により、多くのアイデアが機会損失しています。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>解決：AI × 熟練エンジニア</h3>
+                    <p>生成AIのスピードとエンジニアの最適化技術（Human-in-the-loop）を融合。最短48時間（2営業日）で、ブラウザで動作する高品質なプロトタイプを納品します。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>成果：商談成約率の向上</h3>
+                    <p>「動くデモ」を提示することで、顧客の納得感と安心感を醸成。営業現場で磨き上げた「受注するための品質」を提供します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 料金プラン -->
+    <section class="pricing">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">選べる3つのプラン</h2>
+            <div class="pricing-grid">
+                <!-- ライトプラン -->
+                <div class="plan-card">
+                    <span class="plan-name">ライト</span>
+                    <div class="price">¥100,000<span>/月</span></div>
+                    <div class="plan-desc">
+                        <ul>
+                            <li>月1本まで制作</li>
+                            <li>コスト重視の検証に最適</li>
+                            <li>チャットサポート</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- スタンダードプラン -->
+                <div class="plan-card">
+                    <span class="plan-name">スタンダード</span>
+                    <div class="price">¥300,000<span>/月</span></div>
+                    <div class="plan-desc">
+                        <ul>
+                            <li>月2本まで制作</li>
+                            <li>複数案件の同時並行に</li>
+                            <li>Zoom定例MTG</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- プロプラン -->
+                <div class="plan-card">
+                    <span class="plan-name">プロ</span>
+                    <div class="price">¥500,000~<span>/月</span></div>
+                    <div class="plan-desc">
+                        <ul>
+                            <li>専任PMアサイン</li>
+                            <li>大規模・高度な技術検証</li>
+                            <li>本番移行サポート</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="note" style="text-align: center; margin-top: 20px;">※最低契約期間：3ヶ月〜（解約は前月通知）</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">よくあるご質問</h2>
+            <dl>
+                <dt style="font-weight: bold;">Q. 著作権の扱いは？</dt>
+                <dd style="margin-bottom: 20px;">A. 納品したプロトタイプのコードおよび成果物の権利は、原則としてクライアントに譲渡します。</dd>
+
+                <dt style="font-weight: bold;">Q. 複雑なバックエンド処理も可能か？</dt>
+                <dd style="margin-bottom: 20px;">A. 基本はモック（ダミーデータ）対応ですが、技術力により必要なAPI連携などの実装も柔軟に対応可能です。</dd>
+            </dl>
+        </div>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>お問い合わせ</h2>
+            <p>開発のプロフェッショナルが、あなたのアイデアを実現します。<br>まずは無料相談からお気軽にご連絡ください。</p>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:contact@itnav.co.jp" style="color: #fff; text-decoration: underline;">contact@itnav.co.jp</a></p>
+                <p>Tel: 0025-90-4282</p>
+            </div>
+            <p class="footer-note">運営：株式会社イトナブ</p>
+        </div>
+    </section>
+
+</body>
+</html>
