@@ -64,19 +64,35 @@
 
         /* メインビジュアル */
         .hero {
-            background: var(--bg-light);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             text-align: center;
             padding: 100px 20px;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 2;
         }
         .hero h1 {
             font-size: 3em;
             margin-bottom: 20px;
             letter-spacing: 0.05em;
+            color: #fff;
         }
         .hero p {
             font-size: 1.2em;
             margin-bottom: 40px;
-            color: #666;
+            color: #f0f0f0;
         }
         .cta-button {
             display: inline-block;
