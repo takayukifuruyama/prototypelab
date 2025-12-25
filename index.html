@@ -74,7 +74,7 @@
 
         /* メインビジュアル */
         .hero {
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            background: url('img/main.jpg') center center / cover no-repeat;
             text-align: center;
             padding: 120px 20px;
             position: relative;
@@ -83,11 +83,11 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(92, 184, 92, 0.7) 0%, rgba(156, 204, 101, 0.6) 100%);
             z-index: 1;
         }
         .hero .container {
