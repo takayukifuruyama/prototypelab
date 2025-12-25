@@ -7,10 +7,14 @@
     <style>
         /* 基本設定 */
         :root {
-            --primary-color: #000; /* ロゴに合わせた黒 */
-            --accent-color: #0056b3; /* リンクやボタン用 */
-            --bg-light: #f9f9f9;
+            --primary-color: #4CAF50; /* メインのグリーン */
+            --primary-dark: #45a049; /* 濃いグリーン */
+            --primary-light: #81C784; /* 明るいグリーン */
+            --accent-color: #66BB6A; /* アクセント用グリーン */
+            --bg-light: #f5f9f5;
             --text-color: #333;
+            --gradient-start: #5CB85C;
+            --gradient-end: #9CCC65;
         }
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
@@ -34,9 +38,9 @@
 
         /* ヘッダー */
         header {
-            background: #fff;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -55,28 +59,35 @@
             width: auto;
         }
         .nav-btn {
-            background: var(--primary-color);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 4px;
+            background: #fff;
+            color: var(--primary-color);
+            padding: 12px 28px;
+            border-radius: 25px;
             font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
         /* メインビジュアル */
         .hero {
-            background: url('img/main.jpg') center center / cover no-repeat;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             text-align: center;
-            padding: 100px 20px;
+            padding: 120px 20px;
             position: relative;
+            overflow: hidden;
         }
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             z-index: 1;
         }
         .hero .container {
@@ -88,32 +99,56 @@
             margin-bottom: 20px;
             letter-spacing: 0.05em;
             color: #fff;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            font-weight: 800;
         }
         .hero p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin-bottom: 40px;
-            color: #f0f0f0;
+            color: #fff;
+            opacity: 0.95;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
         .cta-button {
             display: inline-block;
-            background: var(--primary-color);
-            color: #fff;
-            padding: 15px 40px;
+            background: #fff;
+            color: var(--primary-color);
+            padding: 18px 45px;
             font-size: 1.2em;
-            border-radius: 5px;
-            transition: opacity 0.3s;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         .cta-button:hover {
-            opacity: 0.8;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* 共通の見出しスタイル */
+        h2 {
+            position: relative;
+            display: inline-block;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 2px;
         }
 
         /* 特徴セクション */
         .features {
             text-align: center;
-        }
-        .features h2 {
-            font-size: 2em;
-            margin-bottom: 40px;
         }
         .feature-grid {
             display: grid;
@@ -122,13 +157,22 @@
             text-align: left;
         }
         .feature-item {
-            padding: 30px;
-            border: 1px solid #eee;
-            border-radius: 8px;
+            padding: 35px;
+            background: #fff;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.2);
         }
         .feature-item h3 {
             color: var(--primary-color);
             margin-bottom: 15px;
+            font-size: 1.4em;
+            font-weight: 600;
         }
 
         /* コアバリュー */
@@ -142,16 +186,23 @@
             margin-top: 40px;
         }
         .value-item {
-            padding: 25px;
-            background: var(--bg-light);
-            border-left: 4px solid var(--primary-color);
-            border-radius: 4px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(92, 184, 92, 0.05), rgba(156, 204, 101, 0.05));
+            border-left: 5px solid var(--primary-color);
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .value-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.15);
         }
         .value-item h3 {
             color: var(--primary-color);
             margin-top: 0;
-            margin-bottom: 12px;
-            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            font-weight: 600;
         }
 
         /* ユースケース */
@@ -160,23 +211,31 @@
         }
         .use-case-table {
             width: 100%;
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0;
             margin-top: 30px;
             background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
         .use-case-table th,
         .use-case-table td {
-            padding: 15px;
+            padding: 18px;
             text-align: left;
             border-bottom: 1px solid #eee;
         }
         .use-case-table th {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             color: #fff;
             font-weight: bold;
         }
-        .use-case-table tr:hover {
-            background: #f5f5f5;
+        .use-case-table tbody tr {
+            transition: all 0.3s ease;
+        }
+        .use-case-table tbody tr:hover {
+            background: rgba(92, 184, 92, 0.05);
+            transform: scale(1.01);
         }
 
         /* 強み */
@@ -190,26 +249,37 @@
             margin-top: 40px;
         }
         .strength-item {
-            padding: 30px;
-            border: 2px solid var(--primary-color);
-            border-radius: 8px;
+            padding: 35px;
+            background: #fff;
+            border: 3px solid var(--primary-light);
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .strength-item:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.2);
         }
         .strength-item h3 {
             color: var(--primary-color);
             margin-top: 0;
             margin-bottom: 15px;
-            font-size: 1.4em;
+            font-size: 1.5em;
+            font-weight: 600;
         }
         .strength-item .number {
             display: inline-block;
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             color: #fff;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
             text-align: center;
             border-radius: 50%;
-            margin-right: 10px;
+            margin-right: 12px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
         }
 
         /* 導入事例 */
@@ -224,15 +294,23 @@
         }
         .case-item {
             background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--primary-color);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .case-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.2);
         }
         .case-result {
-            font-size: 2em;
+            font-size: 2.2em;
             font-weight: bold;
-            color: var(--primary-color);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 15px;
         }
         .case-company {
@@ -260,13 +338,27 @@
         }
         .plan-card {
             background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
-        .plan-name { font-weight: bold; font-size: 1.2em; display: block; margin-bottom: 10px;}
-        .price { font-size: 2em; font-weight: bold; color: var(--primary-color); }
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.2);
+            border-color: var(--primary-light);
+        }
+        .plan-name { font-weight: bold; font-size: 1.3em; display: block; margin-bottom: 15px; color: var(--primary-color);}
+        .price {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
         .price span { font-size: 0.5em; font-weight: normal; }
         .plan-desc { margin: 20px 0; font-size: 0.9em; text-align: left; }
         .note { font-size: 0.8em; color: #888; margin-top: 10px; }
@@ -274,18 +366,51 @@
         /* お問い合わせ */
         .contact {
             text-align: center;
-            background: #333;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             color: #fff;
         }
-        .contact h2 { margin-bottom: 30px; }
+        .contact h2 {
+            margin-bottom: 30px;
+            color: #fff;
+        }
+        .contact h2::after {
+            background: #fff;
+        }
         .contact-info {
-            font-size: 1.2em;
-            line-height: 2;
+            font-size: 1.3em;
+            line-height: 2.2;
         }
         .footer-note {
             margin-top: 50px;
-            font-size: 0.8em;
-            color: #aaa;
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* FAQ */
+        .faq {
+            background: #fff;
+            padding: 80px 0;
+        }
+        .faq dt {
+            font-weight: bold;
+            margin-top: 25px;
+            color: var(--primary-color);
+            font-size: 1.1em;
+            padding: 15px 20px;
+            background: rgba(92, 184, 92, 0.05);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 8px;
+        }
+        .faq dd {
+            margin-bottom: 20px;
+            margin-left: 0;
+            padding: 15px 20px;
+            line-height: 1.8;
+        }
+
+        /* セクション背景の調整 */
+        section:nth-child(even) {
+            background: var(--bg-light);
         }
     </style>
 </head>
