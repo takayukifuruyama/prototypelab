@@ -10,12 +10,12 @@
     <style>
         /* 基本設定 */
         :root {
-            --primary-color: #2F4F4F; /* 黒板の色 Dark Slate Gray */
+            --primary-color: #FFFFFF; /* 白背景 */
             --accent-color: #FF6347; /* トマト色 */
             --accent-color-2: #FFD700; /* イエロー */
-            --bg-light: #3A5A5A; /* 少し明るい黒板色 */
-            --text-color: #FFFFFF; /* チョーク白 */
-            --chalk-white: #F5F5DC; /* クリーミーな白（チョークの色） */
+            --bg-light: #F9F9F9; /* 薄いグレー */
+            --text-color: #333333; /* ダークグレー */
+            --chalk-white: #333333; /* テキスト用ダークグレー */
         }
         body {
             font-family: "Indie Flower", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, cursive, sans-serif;
@@ -43,9 +43,9 @@
 
         /* ヘッダー */
         header {
-            background: var(--primary-color);
+            background: #FFFFFF;
             padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             border-bottom: 3px solid var(--accent-color);
             position: sticky;
             top: 0;
@@ -75,7 +75,7 @@
         }
         .nav-btn:hover {
             background: var(--accent-color-2);
-            color: var(--primary-color);
+            color: #333;
             transform: translateY(-2px);
         }
 
@@ -93,7 +93,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(47, 79, 79, 0.8);
+            background: rgba(0, 0, 0, 0.4);
             z-index: 1;
         }
         .hero .container {
@@ -104,14 +104,14 @@
             font-size: 3em;
             margin-bottom: 20px;
             letter-spacing: 0.05em;
-            color: var(--accent-color-2);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #FFFFFF;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
         .hero p {
             font-size: 1.2em;
             margin-bottom: 40px;
-            color: var(--chalk-white);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            color: #FFFFFF;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         .cta-button {
             display: inline-block;
@@ -126,7 +126,7 @@
         }
         .cta-button:hover {
             background: var(--accent-color-2);
-            color: var(--primary-color);
+            color: #333;
             transform: translateY(-3px);
             box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
         }
@@ -152,32 +152,29 @@
             padding: 30px;
             border: 3px solid var(--accent-color-2);
             border-radius: 8px;
-            background: var(--primary-color);
-            box-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+            background: #FFFFFF;
+            box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
         }
         .feature-item h3 {
             color: var(--accent-color);
             margin-bottom: 15px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         .feature-item p {
-            color: var(--chalk-white);
+            color: #333;
         }
 
         /* コアバリュー */
         .core-values {
-            background: var(--primary-color);
+            background: #FFFFFF;
         }
         .core-values h2 {
-            color: var(--accent-color-2);
-            text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+            color: #333;
         }
         .core-values h3 {
             color: var(--accent-color);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         .core-values p, .core-values h4 {
-            color: var(--chalk-white);
+            color: #333;
         }
         .value-grid {
             display: grid;
@@ -190,17 +187,16 @@
             background: var(--bg-light);
             border-left: 4px solid var(--accent-color);
             border-radius: 4px;
-            box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            box-shadow: 3px 3px 6px rgba(0,0,0,0.1);
         }
         .value-item h3, .value-item h4 {
-            color: var(--accent-color-2);
+            color: var(--accent-color);
             margin-top: 0;
             margin-bottom: 12px;
             font-size: 1.3em;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         }
         .value-item p {
-            color: var(--chalk-white);
+            color: #333;
         }
 
         /* ユースケース */
@@ -208,47 +204,44 @@
             background: var(--bg-light);
         }
         .use-cases h2 {
-            color: var(--accent-color-2);
-            text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+            color: #333;
         }
         .use-case-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 30px;
-            background: var(--primary-color);
+            background: #FFFFFF;
             border: 3px solid var(--accent-color);
-            box-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+            box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
         }
         .use-case-table th,
         .use-case-table td {
             padding: 15px;
             text-align: left;
-            border-bottom: 2px solid var(--accent-color-2);
-            color: var(--chalk-white);
+            border-bottom: 2px solid #eee;
+            color: #333;
         }
         .use-case-table th {
             background: var(--accent-color);
             color: #fff;
             font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         .use-case-table tr:hover {
             background: var(--bg-light);
         }
         .use-case-table strong {
-            color: var(--accent-color-2);
+            color: var(--accent-color);
         }
 
         /* 強み */
         .strengths {
-            background: var(--primary-color);
+            background: #FFFFFF;
         }
         .strengths h2 {
-            color: var(--accent-color-2);
-            text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+            color: #333;
         }
         .strengths > .container > p {
-            color: var(--chalk-white);
+            color: #333;
         }
         .strength-grid {
             display: grid;
@@ -261,17 +254,16 @@
             border: 3px solid var(--accent-color);
             border-radius: 8px;
             background: var(--bg-light);
-            box-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+            box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
         }
         .strength-item h3 {
-            color: var(--accent-color-2);
+            color: var(--accent-color);
             margin-top: 0;
             margin-bottom: 15px;
             font-size: 1.4em;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         .strength-item p {
-            color: var(--chalk-white);
+            color: #333;
         }
         .strength-item .number {
             display: inline-block;
@@ -291,11 +283,10 @@
             background: var(--bg-light);
         }
         .case-studies h2 {
-            color: var(--accent-color-2);
-            text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+            color: #333;
         }
         .case-studies > .container > p {
-            color: var(--chalk-white);
+            color: #333;
         }
         .case-grid {
             display: grid;
@@ -304,50 +295,48 @@
             margin-top: 40px;
         }
         .case-item {
-            background: var(--primary-color);
+            background: #FFFFFF;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+            box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
             border-top: 4px solid var(--accent-color);
             border: 3px solid var(--accent-color-2);
         }
         .case-item p {
-            color: var(--chalk-white);
+            color: #333;
         }
         .case-item strong {
-            color: var(--accent-color-2);
+            color: var(--accent-color);
         }
         .case-result {
             font-size: 2em;
             font-weight: bold;
             color: var(--accent-color);
             margin-bottom: 15px;
-            text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
         }
         .case-company {
             font-size: 0.9em;
-            color: var(--chalk-white);
+            color: #666;
             margin-bottom: 15px;
         }
         .case-quote {
             font-style: italic;
             line-height: 1.8;
-            color: var(--chalk-white);
-            border-left: 3px solid var(--accent-color-2);
+            color: #333;
+            border-left: 3px solid var(--accent-color);
             padding-left: 15px;
             margin-top: 15px;
         }
 
         /* 料金プラン */
         .pricing {
-            background: var(--primary-color);
+            background: #FFFFFF;
         }
         .pricing h2, .pricing h3 {
-            color: var(--accent-color-2);
-            text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+            color: #333;
         }
         .pricing > .container > p {
-            color: var(--chalk-white);
+            color: #333;
         }
         .pricing-grid {
             display: grid;
@@ -358,41 +347,39 @@
             background: var(--bg-light);
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+            box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
             text-align: center;
             border: 2px solid var(--accent-color-2);
         }
-        .plan-name { font-weight: bold; font-size: 1.2em; display: block; margin-bottom: 10px; color: var(--accent-color-2); text-shadow: 1px 1px 2px rgba(0,0,0,0.2);}
-        .price { font-size: 2em; font-weight: bold; color: var(--accent-color); text-shadow: 2px 2px 3px rgba(0,0,0,0.3); }
-        .price span { font-size: 0.5em; font-weight: normal; color: var(--chalk-white); }
-        .plan-desc { margin: 20px 0; font-size: 0.9em; text-align: left; color: var(--chalk-white); }
-        .plan-desc p { color: var(--chalk-white); }
-        .plan-desc ul li { color: var(--chalk-white); }
-        .note { font-size: 0.8em; color: var(--chalk-white); margin-top: 10px; }
+        .plan-name { font-weight: bold; font-size: 1.2em; display: block; margin-bottom: 10px; color: var(--accent-color);}
+        .price { font-size: 2em; font-weight: bold; color: var(--accent-color); }
+        .price span { font-size: 0.5em; font-weight: normal; color: #333; }
+        .plan-desc { margin: 20px 0; font-size: 0.9em; text-align: left; color: #333; }
+        .plan-desc p { color: #333; }
+        .plan-desc ul li { color: #333; }
+        .note { font-size: 0.8em; color: #666; margin-top: 10px; }
 
         /* お問い合わせ */
         .contact {
             text-align: center;
-            background: var(--bg-light);
+            background: #333;
             color: #fff;
             border-top: 4px solid var(--accent-color);
         }
         .contact h2 {
             margin-bottom: 30px;
-            color: var(--accent-color-2);
-            text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+            color: #fff;
         }
         .contact h3 {
-            color: var(--accent-color);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            color: var(--accent-color-2);
         }
         .contact p {
-            color: var(--chalk-white);
+            color: #fff;
         }
         .contact-info {
             font-size: 1.2em;
             line-height: 2;
-            color: var(--chalk-white);
+            color: #fff;
         }
         .contact-info a {
             color: var(--accent-color-2);
@@ -400,7 +387,7 @@
         .footer-note {
             margin-top: 50px;
             font-size: 0.8em;
-            color: var(--chalk-white);
+            color: #aaa;
         }
     </style>
 </head>
@@ -453,8 +440,8 @@
     <!-- システム営業が抱える課題 -->
     <section class="problems" style="background: var(--bg-light); padding: 80px 0;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 20px; color: var(--accent-color-2); text-shadow: 2px 2px 3px rgba(0,0,0,0.3);">システム営業が抱える「見えない壁」</h2>
-            <p style="text-align: center; margin-bottom: 40px; font-size: 1.05em; color: var(--chalk-white);">システム営業の現場では、受注の前後を問わず、ビジネスの成長を阻害する根深い課題が潜んでいます。<br>これらは日々の業務に紛れ、根本的な対策が打たれにくい「見えない壁」として存在しますが、<br>放置すれば確実に企業の競争力と収益性を蝕んでいきます。</p>
+            <h2 style="text-align: center; margin-bottom: 20px; color: #333;">システム営業が抱える「見えない壁」</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.05em; color: #333;">システム営業の現場では、受注の前後を問わず、ビジネスの成長を阻害する根深い課題が潜んでいます。<br>これらは日々の業務に紛れ、根本的な対策が打たれにくい「見えない壁」として存在しますが、<br>放置すれば確実に企業の競争力と収益性を蝕んでいきます。</p>
             <div class="feature-grid">
                     <div class="feature-item">
                         <h3>課題1：価格競争からの疲弊</h3>
@@ -469,63 +456,63 @@
                         <p>開発が完了し、納品する段階になって初めて「思っていたのと違う」というギャップが発覚。この一言が、大規模な手戻りや追加開発の引き金となり、プロジェクトは炎上。納期遅延やコスト超過を招き、築き上げてきた信頼と本来得られるはずだった利益の両方を失います。</p>
                     </div>
             </div>
-            <p style="text-align: center; margin-top: 40px; font-size: 1.1em; color: var(--chalk-white);">これらの課題は、個別の問題ではなく、相互に関連し合っています。<br>そして最終的には、<strong style="color: var(--accent-color);">「受注率の低下」「プロジェクトの炎上リスク」「クライアントからの信頼低下」</strong>という、<br>事業の根幹を揺るがす深刻な結果へと直結するのです。</p>
-            <p style="text-align: center; margin-top: 30px; font-size: 1.15em; font-weight: bold; color: var(--accent-color-2); text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">しかし、これらの根深い課題を解決し、競合の一歩先を行くための<br>「新しいアプローチ」が存在します。</p>
+            <p style="text-align: center; margin-top: 40px; font-size: 1.1em; color: #333;">これらの課題は、個別の問題ではなく、相互に関連し合っています。<br>そして最終的には、<strong style="color: var(--accent-color);">「受注率の低下」「プロジェクトの炎上リスク」「クライアントからの信頼低下」</strong>という、<br>事業の根幹を揺るがす深刻な結果へと直結するのです。</p>
+            <p style="text-align: center; margin-top: 30px; font-size: 1.15em; font-weight: bold; color: var(--accent-color);">しかし、これらの根深い課題を解決し、競合の一歩先を行くための<br>「新しいアプローチ」が存在します。</p>
         </div>
     </section>
 
     <!-- プロトタイプ営業の比較 -->
     <section style="background: var(--primary-color); padding: 80px 0;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 20px; color: var(--accent-color-2); text-shadow: 2px 2px 3px rgba(0,0,0,0.3);">解決策：「プロトタイプ営業」という新しい常識</h2>
-            <p style="text-align: center; margin-bottom: 50px; font-size: 1.05em; color: var(--chalk-white);">これまで述べてきた課題を打ち破る鍵、それが「プロトタイプ」の活用です。<br>これは単なる開発工程の一部ではありません。営業プロセスそのものを変革し、<br>受注の質と確率を劇的に向上させる戦略的な武器です。</p>
+            <h2 style="text-align: center; margin-bottom: 20px; color: #333;">解決策：「プロトタイプ営業」という新しい常識</h2>
+            <p style="text-align: center; margin-bottom: 50px; font-size: 1.05em; color: #333;">これまで述べてきた課題を打ち破る鍵、それが「プロトタイプ」の活用です。<br>これは単なる開発工程の一部ではありません。営業プロセスそのものを変革し、<br>受注の質と確率を劇的に向上させる戦略的な武器です。</p>
 
-            <h3 style="text-align: center; margin-bottom: 30px; font-size: 1.3em; color: var(--accent-color); text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">「プロトタイプ営業」が、従来の営業手法といかに異なるのか。その違いは一目瞭然です。</h3>
+            <h3 style="text-align: center; margin-bottom: 30px; font-size: 1.3em; color: var(--accent-color);">「プロトタイプ営業」が、従来の営業手法といかに異なるのか。その違いは一目瞭然です。</h3>
 
             <table style="width: 100%; max-width: 900px; margin: 0 auto 50px; border-collapse: collapse; background: var(--bg-light); box-shadow: 4px 4px 8px rgba(0,0,0,0.4); border: 3px solid var(--accent-color);">
                 <thead>
                     <tr style="background: var(--accent-color); color: #fff;">
-                        <th style="padding: 20px; text-align: center; font-size: 1.2em; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">従来の営業 📄</th>
-                        <th style="padding: 20px; text-align: center; font-size: 1.2em; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">プロトタイプ営業 💻</th>
+                        <th style="padding: 20px; text-align: center; font-size: 1.2em;">従来の営業 📄</th>
+                        <th style="padding: 20px; text-align: center; font-size: 1.2em;">プロトタイプ営業 💻</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="padding: 20px; border-bottom: 2px solid var(--accent-color-2); vertical-align: top; color: var(--chalk-white);">
-                            <strong style="color: var(--accent-color-2);">手段:</strong> 提案書 + 見積書
+                        <td style="padding: 20px; border-bottom: 2px solid #eee; vertical-align: top; color: #333;">
+                            <strong style="color: var(--accent-color);">手段:</strong> 提案書 + 見積書
                         </td>
-                        <td style="padding: 20px; border-bottom: 2px solid var(--accent-color-2); background: var(--primary-color); vertical-align: top; color: var(--chalk-white);">
-                            <strong style="color: var(--accent-color-2);">手段:</strong> 提案書 + 動くプロトタイプ
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 20px; border-bottom: 2px solid var(--accent-color-2); vertical-align: top; color: var(--chalk-white);">
-                            <strong style="color: var(--accent-color-2);">顧客体験:</strong> 文字と図による「想像」
-                        </td>
-                        <td style="padding: 20px; border-bottom: 2px solid var(--accent-color-2); background: var(--primary-color); vertical-align: top; color: var(--chalk-white);">
-                            <strong style="color: var(--accent-color-2);">顧客体験:</strong> 実際に触れる「体験」
+                        <td style="padding: 20px; border-bottom: 2px solid #eee; background: #F9F9F9; vertical-align: top; color: #333;">
+                            <strong style="color: var(--accent-color);">手段:</strong> 提案書 + 動くプロトタイプ
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding: 20px; border-bottom: 2px solid var(--accent-color-2); vertical-align: top; color: var(--chalk-white);">
-                            <strong style="color: var(--accent-color-2);">結果:</strong> 完成形が曖昧で、競合との差が不明確
+                        <td style="padding: 20px; border-bottom: 2px solid #eee; vertical-align: top; color: #333;">
+                            <strong style="color: var(--accent-color);">顧客体験:</strong> 文字と図による「想像」
                         </td>
-                        <td style="padding: 20px; border-bottom: 2px solid var(--accent-color-2); background: var(--primary-color); vertical-align: top; color: var(--chalk-white);">
-                            <strong style="color: var(--accent-color-2);">結果:</strong> 完成形が明確で、技術力を実証
+                        <td style="padding: 20px; border-bottom: 2px solid #eee; background: #F9F9F9; vertical-align: top; color: #333;">
+                            <strong style="color: var(--accent-color);">顧客体験:</strong> 実際に触れる「体験」
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding: 20px; vertical-align: top; color: var(--chalk-white);">
-                            <strong style="color: var(--accent-color-2);">勝負の土俵:</strong> 価格で選ばれる
+                        <td style="padding: 20px; border-bottom: 2px solid #eee; vertical-align: top; color: #333;">
+                            <strong style="color: var(--accent-color);">結果:</strong> 完成形が曖昧で、競合との差が不明確
                         </td>
-                        <td style="padding: 20px; background: var(--primary-color); vertical-align: top; color: var(--chalk-white);">
-                            <strong style="color: var(--accent-color-2);">勝負の土俵:</strong> 価値で選ばれる
+                        <td style="padding: 20px; border-bottom: 2px solid #eee; background: #F9F9F9; vertical-align: top; color: #333;">
+                            <strong style="color: var(--accent-color);">結果:</strong> 完成形が明確で、技術力を実証
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px; vertical-align: top; color: #333;">
+                            <strong style="color: var(--accent-color);">勝負の土俵:</strong> 価格で選ばれる
+                        </td>
+                        <td style="padding: 20px; background: #F9F9F9; vertical-align: top; color: #333;">
+                            <strong style="color: var(--accent-color);">勝負の土俵:</strong> 価値で選ばれる
                         </td>
                     </tr>
                 </tbody>
             </table>
 
-            <p style="text-align: center; font-size: 1.15em; margin-bottom: 20px; color: var(--chalk-white);">プロトタイプは、ビジネスに<strong style="color: var(--accent-color-2);">「二重の価値」</strong>をもたらします。<br>それは<strong style="color: var(--accent-color);">「受注率を上げる営業ツール」であり、同時に「炎上を防ぐ開発ツール」</strong>でもあるのです。</p>
+            <p style="text-align: center; font-size: 1.15em; margin-bottom: 20px; color: #333;">プロトタイプは、ビジネスに<strong style="color: var(--accent-color);">「二重の価値」</strong>をもたらします。<br>それは<strong style="color: var(--accent-color);">「受注率を上げる営業ツール」であり、同時に「炎上を防ぐ開発ツール」</strong>でもあるのです。</p>
         </div>
     </section>
 
@@ -678,8 +665,8 @@
     <!-- サービス詳細 -->
     <section style="background: var(--primary-color); padding: 80px 0;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 20px; color: var(--accent-color-2); text-shadow: 2px 2px 3px rgba(0,0,0,0.3);">PROTOTYPE LABのサービス詳細</h2>
-            <p style="text-align: center; margin-bottom: 50px; font-size: 1.05em; color: var(--chalk-white);">PROTOTYPE LABは、単にプロトタイプを制作するだけのサービスではありません。<br>「Concept to Code」をコンセプトに、営業現場で求められる「スピード」「品質」「低リスク」という、<br>本来であれば両立が難しい要素を高次元で実現します。</p>
+            <h2 style="text-align: center; margin-bottom: 20px; color: #333;">PROTOTYPE LABのサービス詳細</h2>
+            <p style="text-align: center; margin-bottom: 50px; font-size: 1.05em; color: #333;">PROTOTYPE LABは、単にプロトタイプを制作するだけのサービスではありません。<br>「Concept to Code」をコンセプトに、営業現場で求められる「スピード」「品質」「低リスク」という、<br>本来であれば両立が難しい要素を高次元で実現します。</p>
 
             <div class="value-grid">
                 <div class="value-item">
@@ -702,10 +689,10 @@
     <section class="pricing">
         <div class="container">
             <h2 style="text-align: center; margin-bottom: 20px;">料金プラン</h2>
-            <p style="text-align: center; margin-bottom: 40px; color: var(--chalk-white);">PROTOTYPE LABでは、企業の規模やプロジェクトの特性、利用頻度に合わせて<br>柔軟にお選びいただけるよう、2種類の料金体系をご用意しています。</p>
+            <p style="text-align: center; margin-bottom: 40px; color: #333;">PROTOTYPE LABでは、企業の規模やプロジェクトの特性、利用頻度に合わせて<br>柔軟にお選びいただけるよう、2種類の料金体系をご用意しています。</p>
 
-            <h3 style="text-align: center; margin-bottom: 20px; color: var(--accent-color); text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">サブスクリプションプラン：継続的な活用で営業プロセスを強化</h3>
-            <p style="text-align: center; margin-bottom: 30px; font-size: 0.95em; color: var(--chalk-white);">継続的に複数の案件でプロトタイプを活用し、営業体制そのものを変革したい企業様に最適なプランです。</p>
+            <h3 style="text-align: center; margin-bottom: 20px; color: var(--accent-color);">サブスクリプションプラン：継続的な活用で営業プロセスを強化</h3>
+            <p style="text-align: center; margin-bottom: 30px; font-size: 0.95em; color: #333;">継続的に複数の案件でプロトタイプを活用し、営業体制そのものを変革したい企業様に最適なプランです。</p>
             <div class="pricing-grid">
                 <!-- ライトプラン -->
                 <div class="plan-card">
@@ -723,7 +710,7 @@
                 </div>
                 <!-- スタンダードプラン -->
                 <div class="plan-card" style="border: 3px solid var(--accent-color);">
-                    <span class="plan-name">スタンダードプラン<br><span style="font-size: 0.75em; color: var(--accent-color-2);">【営業向け推奨】</span></span>
+                    <span class="plan-name">スタンダードプラン<br><span style="font-size: 0.75em; color: var(--accent-color);">【営業向け推奨】</span></span>
                     <div class="price">¥300,000<span>/月（税別）</span></div>
                     <div class="plan-desc">
                         <p style="font-weight: bold; margin-bottom: 10px;">内容：</p>
@@ -751,15 +738,15 @@
                     </div>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 30px; padding: 20px; background: var(--bg-light); border-radius: 8px; border: 2px solid var(--accent-color-2);">
-                <p style="font-weight: bold; margin-bottom: 10px; color: var(--accent-color-2);">契約条件:</p>
-                <p style="font-size: 0.9em; color: var(--chalk-white);">※最低契約期間は3ヶ月となります。</p>
-                <p style="font-size: 0.9em; color: var(--chalk-white);">※未使用分の作成チケットは、翌月末まで繰り越し可能です。</p>
+            <div style="text-align: center; margin-top: 30px; padding: 20px; background: var(--bg-light); border-radius: 8px; border: 2px solid var(--accent-color);">
+                <p style="font-weight: bold; margin-bottom: 10px; color: var(--accent-color);">契約条件:</p>
+                <p style="font-size: 0.9em; color: #333;">※最低契約期間は3ヶ月となります。</p>
+                <p style="font-size: 0.9em; color: #333;">※未使用分の作成チケットは、翌月末まで繰り越し可能です。</p>
             </div>
 
             <!-- 単発プラン -->
-            <h3 style="text-align: center; margin-top: 60px; margin-bottom: 20px; color: var(--accent-color); text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">単発プラン：最重要案件にリソースを集中投下</h3>
-            <p style="text-align: center; margin-bottom: 30px; font-size: 0.95em; color: var(--chalk-white);">特定の重要なコンペや提案など、絶対に負けられない一回の案件に特化してサポートするプランです。</p>
+            <h3 style="text-align: center; margin-top: 60px; margin-bottom: 20px; color: var(--accent-color);">単発プラン：最重要案件にリソースを集中投下</h3>
+            <p style="text-align: center; margin-bottom: 30px; font-size: 0.95em; color: #333;">特定の重要なコンペや提案など、絶対に負けられない一回の案件に特化してサポートするプランです。</p>
             <div style="max-width: 700px; margin: 0 auto;">
                 <div class="plan-card" style="border: 3px solid var(--accent-color);">
                     <span class="plan-name">フルサポートプラン</span>
@@ -786,8 +773,8 @@
     <!-- ご利用開始までの簡単3ステップ -->
     <section style="background: var(--bg-light); padding: 80px 0;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 20px; color: var(--accent-color-2); text-shadow: 2px 2px 3px rgba(0,0,0,0.3);">ご利用開始までの簡単3ステップ</h2>
-            <p style="text-align: center; margin-bottom: 50px; font-size: 1.05em; color: var(--chalk-white);">PROTOTYPE LABの導入は、驚くほどスピーディーかつ簡単です。<br>複雑な手続きは一切不要で、ご相談いただいたその日から、貴社の営業活動を強化する準備を始めることができます。</p>
+            <h2 style="text-align: center; margin-bottom: 20px; color: #333;">ご利用開始までの簡単3ステップ</h2>
+            <p style="text-align: center; margin-bottom: 50px; font-size: 1.05em; color: #333;">PROTOTYPE LABの導入は、驚くほどスピーディーかつ簡単です。<br>複雑な手続きは一切不要で、ご相談いただいたその日から、貴社の営業活動を強化する準備を始めることができます。</p>
 
             <div class="value-grid">
                 <div class="value-item">
@@ -809,32 +796,32 @@
     <!-- 営業フロー -->
     <section class="sales-flow" style="background: var(--primary-color); padding: 80px 0;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 20px; color: var(--accent-color-2); text-shadow: 2px 2px 3px rgba(0,0,0,0.3);">営業フローへの組み込み</h2>
-            <p style="text-align: center; margin-bottom: 50px; font-size: 1.05em; color: var(--chalk-white);">既存の営業プロセスに簡単に組み込めます</p>
+            <h2 style="text-align: center; margin-bottom: 20px; color: #333;">営業フローへの組み込み</h2>
+            <p style="text-align: center; margin-bottom: 50px; font-size: 1.05em; color: #333;">既存の営業プロセスに簡単に組み込めます</p>
 
             <!-- 営業フロー図 -->
             <div style="text-align: center; margin-bottom: 50px;">
-                <img src="img/flow.png" alt="営業フロー図" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 4px 4px 8px rgba(0,0,0,0.4); border: 3px solid var(--accent-color-2);">
+                <img src="img/flow.png" alt="営業フロー図" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 4px 4px 8px rgba(0,0,0,0.1); border: 3px solid var(--accent-color);">
             </div>
 
-            <p style="text-align: center; margin-top: 40px; font-weight: bold; color: var(--accent-color-2); text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">商談の早い段階でプロトタイプを見せることで、競合より一歩先を行くことができます</p>
+            <p style="text-align: center; margin-top: 40px; font-weight: bold; color: var(--accent-color);">商談の早い段階でプロトタイプを見せることで、競合より一歩先を行くことができます</p>
         </div>
     </section>
 
     <!-- FAQ -->
     <section class="faq" style="background: var(--bg-light); padding: 80px 0;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 20px; color: var(--accent-color-2); text-shadow: 2px 2px 3px rgba(0,0,0,0.3);">よくあるご質問（FAQ）</h2>
-            <p style="text-align: center; margin-bottom: 40px; font-size: 1.05em; color: var(--chalk-white);">サービス導入をご検討いただくにあたり、お客様が抱かれがちな疑問点についてお答えします。<br>ここにないご質問については、どうぞお気軽にお問い合わせください。</p>
+            <h2 style="text-align: center; margin-bottom: 20px; color: #333;">よくあるご質問（FAQ）</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.05em; color: #333;">サービス導入をご検討いただくにあたり、お客様が抱かれがちな疑問点についてお答えします。<br>ここにないご質問については、どうぞお気軽にお問い合わせください。</p>
             <dl style="max-width: 800px; margin: 0 auto;">
-                <dt style="font-weight: bold; margin-top: 25px; font-size: 1.1em; color: var(--accent-color-2); text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">Q. 納品されたプロトタイプの著作権はどうなりますか？</dt>
-                <dd style="margin-bottom: 25px; padding-left: 20px; line-height: 1.8; color: var(--chalk-white);">A. ご安心ください。納品した成果物のコードやデザインに関する権利は、原則としてすべてクライアント様（貴社）に譲渡いたします。</dd>
+                <dt style="font-weight: bold; margin-top: 25px; font-size: 1.1em; color: var(--accent-color);">Q. 納品されたプロトタイプの著作権はどうなりますか？</dt>
+                <dd style="margin-bottom: 25px; padding-left: 20px; line-height: 1.8; color: #333;">A. ご安心ください。納品した成果物のコードやデザインに関する権利は、原則としてすべてクライアント様（貴社）に譲渡いたします。</dd>
 
-                <dt style="font-weight: bold; margin-top: 25px; font-size: 1.1em; color: var(--accent-color-2); text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">Q. 複雑なバックエンド処理やデータベース連携も可能ですか？</dt>
-                <dd style="margin-bottom: 25px; padding-left: 20px; line-height: 1.8; color: var(--chalk-white);">A. 本サービスはあくまで「プロトタイプ」のため、大規模なデータ処理や複雑な計算ロジックは、モックデータ（見せかけのデータ）で対応することを基本としています。しかし、検証に必要な外部APIとの連携や基本的なロジックの実装については、弊社の高い技術力で柔軟に対応可能ですので、お気軽にご相談ください。</dd>
+                <dt style="font-weight: bold; margin-top: 25px; font-size: 1.1em; color: var(--accent-color);">Q. 複雑なバックエンド処理やデータベース連携も可能ですか？</dt>
+                <dd style="margin-bottom: 25px; padding-left: 20px; line-height: 1.8; color: #333;">A. 本サービスはあくまで「プロトタイプ」のため、大規模なデータ処理や複雑な計算ロジックは、モックデータ（見せかけのデータ）で対応することを基本としています。しかし、検証に必要な外部APIとの連携や基本的なロジックの実装については、弊社の高い技術力で柔軟に対応可能ですので、お気軽にご相談ください。</dd>
 
-                <dt style="font-weight: bold; margin-top: 25px; font-size: 1.1em; color: var(--accent-color-2); text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">Q. デザインを細かく指定することはできますか？</dt>
-                <dd style="margin-bottom: 25px; padding-left: 20px; line-height: 1.8; color: var(--chalk-white);">A. 生成AIを活用する特性上、ピクセル単位での詳細なデザイン指定は難しい場合がございます。ただし、ブランドカラーの適用や、Webサイト全体の雰囲気（トーン＆マナー）を合わせる調整は可能です。また、Figma等のデザインデータをお持ち込みいただき、それに沿って実装することも対応しております。</dd>
+                <dt style="font-weight: bold; margin-top: 25px; font-size: 1.1em; color: var(--accent-color);">Q. デザインを細かく指定することはできますか？</dt>
+                <dd style="margin-bottom: 25px; padding-left: 20px; line-height: 1.8; color: #333;">A. 生成AIを活用する特性上、ピクセル単位での詳細なデザイン指定は難しい場合がございます。ただし、ブランドカラーの適用や、Webサイト全体の雰囲気（トーン＆マナー）を合わせる調整は可能です。また、Figma等のデザインデータをお持ち込みいただき、それに沿って実装することも対応しております。</dd>
             </dl>
         </div>
     </section>
