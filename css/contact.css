@@ -1,189 +1,268 @@
-/* 基本設定 */
-:root {
-    --primary-color: #FFFFFF; /* 白背景 */
-    --accent-color: #FF6347; /* トマト色 */
-    --accent-color-2: #FFD700; /* イエロー */
-    --bg-light: #F9F9F9; /* 薄いグレー */
-    --text-color: #333333; /* ダークグレー */
-    --chalk-white: #333333; /* テキスト用ダークグレー */
-}
-body {
-    font-family: "Indie Flower", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, cursive, sans-serif;
+/* リセット・基本設定 */
+* {
     margin: 0;
     padding: 0;
-    color: var(--text-color);
-    line-height: 1.6;
-    background: var(--primary-color);
+    box-sizing: border-box;
 }
-h1, h2, h3 {
-    font-family: "Caveat", "Indie Flower", cursive;
-}
-a { text-decoration: none; }
 
-/* レイアウト */
+:root {
+    --primary-navy: #1a2642;
+    --secondary-navy: #2c3e5c;
+    --accent-blue: #4a90e2;
+    --dark-bg: #0f1823;
+    --light-gray: #f5f7fa;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --white: #ffffff;
+    --border-color: #e1e8ed;
+}
+
+body {
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.8;
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+/* タイポグラフィ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--primary-navy);
+}
+
+/* コンテナ */
 .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 /* ヘッダー */
 header {
-    background: #FFFFFF;
+    background: var(--white);
     padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border-bottom: 3px solid var(--accent-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
 }
+
 .header-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .logo {
     display: flex;
     align-items: center;
 }
+
 .logo img {
     height: 40px;
     width: auto;
 }
-.nav-btn {
-    background: var(--accent-color);
-    color: #fff;
-    padding: 10px 20px;
+
+.header-cta {
+    background: var(--accent-blue);
+    color: var(--white);
+    padding: 12px 30px;
     border-radius: 4px;
-    font-weight: bold;
-    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    transition: all 0.3s;
-}
-.nav-btn:hover {
-    background: var(--accent-color-2);
-    color: #333;
-    transform: translateY(-2px);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-blue);
 }
 
-/* お問い合わせフォーム */
-.contact-form-section {
-    padding: 80px 0;
-    background: var(--bg-light);
-    min-height: calc(100vh - 80px);
+.header-cta:hover {
+    background: transparent;
+    color: var(--accent-blue);
 }
+
+/* お問い合わせフォームセクション */
+.contact-form-section {
+    padding: 100px 0;
+    background: var(--light-gray);
+    min-height: calc(100vh - 200px);
+}
+
 .contact-form-section h1 {
     text-align: center;
-    font-size: 2.5em;
     margin-bottom: 20px;
-    color: #333;
 }
+
 .contact-form-section .intro {
     text-align: center;
-    margin-bottom: 50px;
-    color: #333;
-    font-size: 1.1em;
+    margin-bottom: 60px;
+    color: var(--text-light);
+    font-size: 1.1rem;
 }
 
+/* フォームコンテナ */
 .form-container {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
-    background: #FFFFFF;
-    padding: 50px;
-    border-radius: 8px;
-    box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
-    border: 3px solid var(--accent-color-2);
+    background: var(--white);
+    padding: 60px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
+/* フォームグループ */
 .form-group {
     margin-bottom: 30px;
 }
+
 .form-group label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--accent-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--primary-navy);
+    font-size: 1rem;
 }
+
 .form-group label .required {
-    color: var(--accent-color);
+    color: var(--accent-blue);
     margin-left: 5px;
 }
+
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="tel"],
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 12px;
-    border: 2px solid #ddd;
+    padding: 15px;
+    border: 2px solid var(--border-color);
     border-radius: 4px;
-    font-size: 1em;
+    font-size: 1rem;
     font-family: inherit;
     box-sizing: border-box;
-    background: #fff;
-    color: #333;
+    background: var(--white);
+    color: var(--text-dark);
+    transition: border-color 0.3s ease;
 }
+
 .form-group textarea {
-    min-height: 150px;
+    min-height: 180px;
     resize: vertical;
 }
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--accent-color);
+    border-color: var(--accent-blue);
 }
 
+/* 送信ボタン */
 .submit-btn {
-    background: var(--accent-color);
-    color: #fff;
-    padding: 15px 50px;
-    font-size: 1.2em;
-    border: 2px solid var(--accent-color-2);
-    border-radius: 5px;
+    background: var(--accent-blue);
+    color: var(--white);
+    padding: 18px 60px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
     cursor: pointer;
     display: block;
     margin: 40px auto 0;
-    transition: all 0.3s;
-    font-weight: bold;
-    box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
 }
+
 .submit-btn:hover {
-    background: var(--accent-color-2);
-    color: #333;
     transform: translateY(-3px);
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
+    box-shadow: 0 15px 40px rgba(74, 144, 226, 0.4);
 }
 
 /* フッター */
-footer {
-    background: #333;
-    color: #fff;
-    padding: 40px 0;
+.contact-footer {
+    background: var(--dark-bg);
+    color: var(--white);
     text-align: center;
-    border-top: 4px solid var(--accent-color);
+    padding: 60px 0;
 }
-footer .contact-info {
-    font-size: 1.1em;
-    line-height: 2;
-    margin-bottom: 20px;
-    color: #fff;
+
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 2px solid rgba(74, 144, 226, 0.3);
 }
-footer a {
-    color: var(--accent-color-2);
-    text-decoration: underline;
+
+.contact-item {
+    margin: 30px 0;
+    font-size: 1.1rem;
 }
-.footer-note {
-    font-size: 0.8em;
-    color: #aaa;
-    margin-top: 30px;
+
+.contact-item:first-child {
+    margin-top: 0;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-item strong {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--accent-blue);
+}
+
+.contact-item a {
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent-blue);
+    transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--accent-blue);
+}
+
+.company-info {
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .contact-form-section {
+        padding: 60px 0;
+    }
+
     .form-container {
+        padding: 40px 20px;
+    }
+
+    .contact-info {
         padding: 30px 20px;
     }
-    .contact-form-section h1 {
-        font-size: 2em;
+
+    .submit-btn {
+        padding: 15px 40px;
+        font-size: 1.1rem;
     }
+}
+
+/* スムーススクロール */
+html {
+    scroll-behavior: smooth;
 }

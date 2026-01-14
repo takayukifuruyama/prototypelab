@@ -107,7 +107,7 @@ header {
 
 /* ヒーローセクション */
 .hero {
-    background: url('img/main.jpg') center center / cover no-repeat;
+    background: url('../img/main.jpg') center center / cover no-repeat;
     color: var(--white);
     padding: 150px 0 120px;
     text-align: center;
