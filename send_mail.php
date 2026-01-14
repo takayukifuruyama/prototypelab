@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // 送信先メールアドレス（必ず変更してください）
-$to = 'contact@itnav.co.jp';
+$to = 'takayuki.f@itnav.co.jp';
 
 // 入力値の取得とサニタイズ
 function sanitize_input($data) {
