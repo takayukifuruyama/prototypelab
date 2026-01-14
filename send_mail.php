@@ -186,13 +186,17 @@ $from_name = remove_newlines($name);
 mb_language('Japanese');
 mb_internal_encoding('UTF-8');
 
-$headers = "From: " . mb_encode_mimeheader($from_name) . " <" . $from . ">\n";
-$headers .= "Reply-To: " . $from . "\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\n";
+// 件名をエンコード
+$encoded_subject = mb_encode_mimeheader($subject, 'UTF-8');
+
+$headers = "From: " . mb_encode_mimeheader($from_name, 'UTF-8') . " <" . $from . ">\r\n";
+$headers .= "Reply-To: " . $from . "\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$headers .= "Content-Transfer-Encoding: 8bit\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
 // メール送信
-$mail_sent = mb_send_mail($to, $subject, $body, $headers);
+$mail_sent = mb_send_mail($to, $encoded_subject, $body, $headers);
 
 // 自動返信メール（お客様へ）
 $auto_reply_subject = '【PROTOTYPE LAB】お問い合わせありがとうございます';
@@ -224,13 +228,17 @@ $auto_reply_body .= "Email: contact@itnav.co.jp\n";
 $auto_reply_body .= "Web: https://itnav.co.jp/\n";
 $auto_reply_body .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
 
-$auto_reply_headers = "From: PROTOTYPE LAB <contact@itnav.co.jp>\n";
-$auto_reply_headers .= "Reply-To: contact@itnav.co.jp\n";
-$auto_reply_headers .= "Content-Type: text/plain; charset=UTF-8\n";
+// 自動返信の件名をエンコード
+$encoded_auto_reply_subject = mb_encode_mimeheader($auto_reply_subject, 'UTF-8');
+
+$auto_reply_headers = "From: " . mb_encode_mimeheader('PROTOTYPE LAB', 'UTF-8') . " <contact@itnav.co.jp>\r\n";
+$auto_reply_headers .= "Reply-To: contact@itnav.co.jp\r\n";
+$auto_reply_headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$auto_reply_headers .= "Content-Transfer-Encoding: 8bit\r\n";
 $auto_reply_headers .= "X-Mailer: PHP/" . phpversion();
 
 // 自動返信メール送信
-mb_send_mail($from, $auto_reply_subject, $auto_reply_body, $auto_reply_headers);
+mb_send_mail($from, $encoded_auto_reply_subject, $auto_reply_body, $auto_reply_headers);
 
 // 送信結果によってリダイレクト
 if ($mail_sent) {
